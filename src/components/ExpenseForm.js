@@ -29,7 +29,7 @@ export default class ExpenseForm extends React.Component {
             this.setState(() => ({ amount }));
         }
     }
-    onDateChange = createdAt => {
+    onDatesChange = createdAt => {
         this.setState(() => ({ createdAt }));
     }
     onFocusChange = ({ focused }) => {
@@ -77,7 +77,7 @@ export default class ExpenseForm extends React.Component {
                     />
                     <SingleDatePicker
                         date={ this.state.createdAt }
-                        onDateChange={ this.onDateChange }
+                        onDatesChange={ this.onDatesChange }
                         focused={ this.state.calenderFocused }
                         onFocusChange={ this.onFocusChange }
                         numberOfMonths={ 1 }
@@ -89,7 +89,6 @@ export default class ExpenseForm extends React.Component {
                         onChange={ (e) => this.setState({ note: e.target.value }) }
                     ></textarea>
                     <button>Add Expense</button>
-                    <button>Remove Expense</button>
                 </form>
             </div>
         )
